@@ -93,3 +93,123 @@ printf("%d" , nc);
 }
 
 ************************************************************************/
+
+/******************************************
+//Line counting
+
+int main()
+{
+    int c , nl;
+    nl = 0;
+    while((c=getchar()) != EOF)
+        {
+            if(c == '\n')
+            {
+                ++nl;
+            }
+        }
+    printf("Total number of Lines are: %i" , nl);
+}
+
+*************************************/
+
+
+/***********************Exercise 1-8 ****************************
+Write a program to count blanks, tabs and newlines?
+****************************************************************/
+
+/****************************
+int main()
+{
+    int b=0, t=0, nl=0, c;
+    while((c=getchar()) != EOF)
+        {
+            switch (c)
+            {
+            case ' ':
+                ++b;
+                break;
+            case '\t':
+                ++t;
+                break;
+            case '\n':
+                ++nl;
+                break;
+            }
+        }
+    printf("This input has %i blanks, %i tabs, %i newlines", b, t, nl);
+
+}
+
+*******************************/
+
+/***********************************Exercise 1-9************************************
+Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.
+************************************************************************************/
+
+/***********
+
+#define NONBLANK ' '
+int main()
+{
+  int c, lastc;
+
+  lastc = NONBLANK;
+
+  while((c = getchar()) != EOF)
+  {
+    if(c == ' ')
+    {
+      if(lastc != ' ')
+        putchar(c);
+    }
+    else
+      putchar(c);
+    lastc = c;
+  }
+  return 0;
+}
+
+*****************/
+
+
+/***********************************Exercise 1-10************************************
+Write a program to copy its input to its output,
+replacing each tab by \t, each backspace by \b, and each backslash by \\.
+This makes tabs and backspaces visible in an unambiguous way.
+************************************************************************************/
+
+/*********************************************************************************
+int main()
+{
+  int c;
+
+  while((c = getchar()) != EOF)
+  {
+    if(c == '\t')
+    {
+      putchar('\\');
+      putchar('t');
+    }
+
+    if(c == '\b')
+    {
+      putchar('\\');
+      putchar('b');
+    }
+
+    if(c == '\\')
+    {
+      putchar('\\');
+      putchar('\\');
+    }
+
+    if(c != '\t' && c != '\b' && c != '\\')
+    {
+      putchar(c);
+    }
+  }
+  return 0;
+}
+
+******************************************************************/
